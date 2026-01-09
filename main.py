@@ -1,8 +1,11 @@
 from analyzer.parser import parse_log_file
 
+
+
 def main():
     events = parse_log_file("sample_logs/events.csv")
-    print("Parsed {} valid events".format(len(events)))
+    
+    print(f"Parsed {len(events)} valid events")
     
     for event in events:
         print(event)

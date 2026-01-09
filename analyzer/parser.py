@@ -1,7 +1,10 @@
 import csv
 from datetime import datetime
+from analyzer.models import LogEvent
 
-def parse_log_file(file_path: str) -> list:
+
+
+def parse_log_file(file_path: str) -> list[LogEvent]:
     events = []
     
     with open(file_path, newline="", encoding="utf-8") as csvfile:
@@ -13,16 +16,16 @@ def parse_log_file(file_path: str) -> list:
                 row["timestamp"], "%Y-%m-%d %H:%M:%S"
                 )
                 
-                event = {
-                "timestamp": timestamp,
-                "system": row["system"],
-                "severity": row["severity"],
-                "message": row["message"],
-                }
+                event = LogEvent(
+                timestamp=timestamp,
+                system=row["system"],
+                severity=row["severity"],
+                message=row["message"],
+                )
                 
                 events.append(event)
                 
-            except Exception as e:
-                print("Skipping invalid row: {} ({})".format(row,e))
+            except (ValueError, KeyError) as e:
+                print(f"Skipping invalid row: {row} ({e})")
                 
     return events
