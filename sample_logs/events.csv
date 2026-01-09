@@ -1,0 +1,5 @@
+timestamp,system,severity,message
+2026-01-01 08:15:00,PLC_1,INFO,System Started
+2026-01-01 08:20:12,PLC_1,WARN,High Temperature
+2026-01-01 08:21:30,PLC_2,ERROR,Sensor Failure
+2026-01-01 BAD_TIME,PLC_3,ERROR,Bad Timestamp Example
