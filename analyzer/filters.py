@@ -17,5 +17,8 @@ def sort_by_timestamp(
     events: list[LogEvent], descending: bool = False) -> list[LogEvent]:
         return sorted(events, key=lambda e: e.timestamp, reverse=descending)
         
-      
+        
+def filter_by_system(
+    events: list[LogEvent], system: str) -> list[LogEvent]:
+        return[event for event in events if event.system == system]
         
