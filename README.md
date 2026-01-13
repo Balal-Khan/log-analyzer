@@ -5,16 +5,16 @@ This project simulates real-world industrial control system logs and demonstrate
 
 
 # Features
--CSV log parsing with robust error handling
--Strongly-typed LogEvent data model
--Handling of invalid timestamps
--Filter events by:
-     -Severity (INFO, WARN, ERROR)
-     -System (e.g., PLC_1, PLC_2)
-     -Time Window (last N minutes)
--Sort events chronologically
--Modular project structure
-
+-CSV log parsing with robust error handling  
+-Strongly-typed LogEvent data model  
+-Handling of invalid timestamps  
+-Filter events by:  
+     -Severity (INFO, WARN, ERROR)  
+     -System (e.g., PLC_1, PLC_2)  
+     -Time Window (last N minutes)  
+-Sort events chronologically  
+-Modular project structure  
+ 
 # Example Usage
 '''bash
 python main.py
